@@ -13,8 +13,8 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: "Todo List",
       theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.white),
-        useMaterial3: true,
+        brightness: Brightness.light,
+        primarySwatch: Colors.blue,
       ),
       home: const HomeScreen(),
     );
