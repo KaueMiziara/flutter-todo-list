@@ -19,7 +19,9 @@ class ScreenHeader extends StatelessWidget implements PreferredSizeWidget {
           backgroundColor: Colors.white,
           child: IconButton(
             icon: const Icon(Icons.close, color: Colors.black),
-            onPressed: () {},
+            onPressed: () {
+              Navigator.pop(context);
+            },
           ),
         ),
       ),
