@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:todo_list/components/elements/task_card.dart';
 
 class TaskBox extends StatelessWidget {
   const TaskBox({super.key});
@@ -15,19 +16,18 @@ class TaskBox extends StatelessWidget {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
-              Text("Item 1"),
+              TaskCard(taskName: "Item 1"),
               Divider(),
-              Text("Item 2"),
+              TaskCard(taskName: "Item 2"),
               Divider(),
-              Text("Item 3"),
+              TaskCard(taskName: "Item 3"),
               Divider(),
-              Text("Item 4"),
+              TaskCard(taskName: "Item 4"),
               Divider(),
-              Text("Item 5"),
+              TaskCard(taskName: "Item 5"),
               Divider(),
-              Text("Item 6"),
+              TaskCard(taskName: "Item 6"),
               Divider(),
-              Text("Item 7"),
             ],
           ),
         ),
