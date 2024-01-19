@@ -6,7 +6,7 @@ class TaskBox extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.fromLTRB(28, 32, 28, 8),
+      padding: const EdgeInsets.fromLTRB(28, 16, 28, 16),
       child: Container(
         height: 200,
         color: Colors.black12,
