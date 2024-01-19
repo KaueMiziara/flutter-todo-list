@@ -11,7 +11,19 @@ class HomeScreen extends StatelessWidget {
       body: Column(
         children: [
           Header(),
-          TaskBox(),
+          Padding(
+            padding: EdgeInsets.fromLTRB(0, 16, 0, 16),
+            child: Column(
+              children: [
+                TaskBox(),
+                Text(
+                  "Completed",
+                  style: TextStyle(fontWeight: FontWeight.bold),
+                ),
+                TaskBox(),
+              ],
+            ),
+          ),
         ],
       ),
     );
