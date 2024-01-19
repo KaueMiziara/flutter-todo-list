@@ -10,7 +10,7 @@ class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color.fromRGBO(241, 245, 249, 1.0),
+      backgroundColor: TodoColors.gray,
       body: Stack(
         clipBehavior: Clip.none,
         children: [
