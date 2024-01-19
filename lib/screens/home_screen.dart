@@ -32,7 +32,7 @@ class HomeScreen extends StatelessWidget {
                 alignment: Alignment.bottomCenter,
                 child: ElevatedButton(
                   style: ElevatedButton.styleFrom(
-                    backgroundColor: Colors.blue,
+                    backgroundColor: const Color.fromRGBO(70, 202, 254, 1.0),
                     foregroundColor: Colors.black,
                     fixedSize: const Size(358, 56),
                     textStyle: const TextStyle(
