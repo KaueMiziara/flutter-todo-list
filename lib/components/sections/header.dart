@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:todo_list/todo_colors.dart';
 
 class Header extends StatelessWidget {
   const Header({super.key});
@@ -7,7 +8,7 @@ class Header extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       height: 234,
-      color: const Color.fromRGBO(70, 202, 254, 1.0),
+      color: TodoColors.blue,
       child: const Padding(
         padding: EdgeInsets.fromLTRB(16, 42, 16, 54),
         child: Center(

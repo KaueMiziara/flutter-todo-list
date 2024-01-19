@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:todo_list/components/sections/header.dart';
 import 'package:todo_list/components/sections/task_box.dart';
+import 'package:todo_list/todo_colors.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -32,7 +33,7 @@ class HomeScreen extends StatelessWidget {
                 alignment: Alignment.bottomCenter,
                 child: ElevatedButton(
                   style: ElevatedButton.styleFrom(
-                    backgroundColor: const Color.fromRGBO(70, 202, 254, 1.0),
+                    backgroundColor: TodoColors.blue,
                     foregroundColor: Colors.black,
                     fixedSize: const Size(358, 56),
                     textStyle: const TextStyle(
