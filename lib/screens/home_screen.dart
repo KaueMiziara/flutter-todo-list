@@ -8,11 +8,13 @@ class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return const Scaffold(
-      body: Column(
+      backgroundColor: Color.fromRGBO(241, 245, 249, 1.0),
+      body: Stack(
+        clipBehavior: Clip.none,
         children: [
           Header(),
           Padding(
-            padding: EdgeInsets.fromLTRB(0, 16, 0, 16),
+            padding: EdgeInsets.fromLTRB(0, 158, 0, 16),
             child: Column(
               children: [
                 TaskBox(),
