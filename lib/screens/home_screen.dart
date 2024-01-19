@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:todo_list/components/header.dart';
-import 'package:todo_list/components/task_box.dart';
+import 'package:todo_list/components/sections/header.dart';
+import 'package:todo_list/components/sections/task_box.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
