@@ -11,7 +11,7 @@ class TaskBox extends StatelessWidget {
       child: Container(
         height: 200,
         decoration: const BoxDecoration(
-            color: Colors.black12,
+            color: Color.fromRGBO(250, 250, 250, 1.0),
             borderRadius: BorderRadius.all(Radius.circular(15))),
         child: const SingleChildScrollView(
           padding: EdgeInsets.fromLTRB(0, 16, 0, 16),
