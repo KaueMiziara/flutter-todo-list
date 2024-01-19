@@ -7,13 +7,13 @@ class Header extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Container(
-        height: 216,
+        height: 234,
         color: Colors.blue,
         child: const Padding(
-          padding: EdgeInsets.fromLTRB(16, 48, 16, 16),
+          padding: EdgeInsets.fromLTRB(16, 42, 16, 54),
           child: Center(
             child: Column(
-              mainAxisAlignment: MainAxisAlignment.spaceAround,
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
                 Text(
                   "Month dd, yyyy",
