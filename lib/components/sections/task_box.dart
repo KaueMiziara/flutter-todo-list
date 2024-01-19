@@ -10,7 +10,9 @@ class TaskBox extends StatelessWidget {
       padding: const EdgeInsets.fromLTRB(28, 16, 28, 16),
       child: Container(
         height: 200,
-        color: Colors.black12,
+        decoration: const BoxDecoration(
+            color: Colors.black12,
+            borderRadius: BorderRadius.all(Radius.circular(15))),
         child: const SingleChildScrollView(
           padding: EdgeInsets.fromLTRB(0, 16, 0, 16),
           child: Column(
