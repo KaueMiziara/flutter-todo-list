@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:todo_list/components/sections/header.dart';
 import 'package:todo_list/components/sections/task_box.dart';
-import 'package:todo_list/screens/new_task_screen.dart';
+import 'package:todo_list/pages/new_task_page.dart';
 import 'package:todo_list/themes/todo_colors.dart';
 
-class HomeScreen extends StatelessWidget {
-  const HomeScreen({super.key});
+class HomePage extends StatelessWidget {
+  const HomePage({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -44,7 +44,7 @@ class HomeScreen extends StatelessWidget {
                   child: const Text("New Task"),
                   onPressed: () {
                     Navigator.of(context).push(MaterialPageRoute(
-                        builder: (context) => const NewTaskScreen()));
+                        builder: (context) => const NewTaskPage()));
                   },
                 )),
           )
