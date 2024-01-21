@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:todo_list/components/sections/screen_header.dart';
-import 'package:todo_list/todo_colors.dart';
+import 'package:todo_list/themes/todo_colors.dart';
 
 class NewTaskScreen extends StatelessWidget {
   const NewTaskScreen({super.key});

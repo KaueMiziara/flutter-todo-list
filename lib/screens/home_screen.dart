@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:todo_list/components/sections/header.dart';
 import 'package:todo_list/components/sections/task_box.dart';
 import 'package:todo_list/screens/new_task_screen.dart';
-import 'package:todo_list/todo_colors.dart';
+import 'package:todo_list/themes/todo_colors.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
