@@ -1,14 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:todo_list/components/sections/header.dart';
 import 'package:todo_list/components/sections/task_box.dart';
+import 'package:todo_list/pages/new_task_page.dart';
+import 'package:todo_list/themes/todo_colors.dart';
 
-class HomeScreen extends StatelessWidget {
-  const HomeScreen({super.key});
+class HomePage extends StatelessWidget {
+  const HomePage({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color.fromRGBO(241, 245, 249, 1.0),
+      backgroundColor: TodoColors.gray,
       body: Stack(
         clipBehavior: Clip.none,
         children: [
@@ -32,16 +34,18 @@ class HomeScreen extends StatelessWidget {
                 alignment: Alignment.bottomCenter,
                 child: ElevatedButton(
                   style: ElevatedButton.styleFrom(
-                    backgroundColor: const Color.fromRGBO(70, 202, 254, 1.0),
-                    foregroundColor: Colors.black,
-                    fixedSize: const Size(358, 56),
-                    textStyle: const TextStyle(
-                      fontSize: 16,
-                      fontWeight: FontWeight.bold,
-                    )
-                  ),
-                  onPressed: () {},
+                      backgroundColor: TodoColors.blue,
+                      foregroundColor: Colors.black,
+                      fixedSize: const Size(358, 56),
+                      textStyle: const TextStyle(
+                        fontSize: 16,
+                        fontWeight: FontWeight.bold,
+                      )),
                   child: const Text("New Task"),
+                  onPressed: () {
+                    Navigator.of(context).push(MaterialPageRoute(
+                        builder: (context) => const NewTaskPage()));
+                  },
                 )),
           )
         ],
