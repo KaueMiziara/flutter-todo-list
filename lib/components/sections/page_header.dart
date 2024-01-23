@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:todo_list/themes/todo_colors.dart';
 
-class ScreenHeader extends StatelessWidget implements PreferredSizeWidget {
-  const ScreenHeader({super.key, required this.screenTitle});
+class PageHeader extends StatelessWidget implements PreferredSizeWidget {
+  const PageHeader({super.key, required this.screenTitle});
 
   final String screenTitle;
 

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:todo_list/components/sections/screen_header.dart';
+import 'package:todo_list/components/sections/page_header.dart';
 import 'package:todo_list/themes/todo_colors.dart';
 
 class NewTaskPage extends StatelessWidget {
@@ -8,7 +8,7 @@ class NewTaskPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return const Scaffold(
-      appBar: ScreenHeader(screenTitle: "New Task"),
+      appBar: PageHeader(screenTitle: "New Task"),
       backgroundColor: TodoColors.gray,
       body: Padding(
         padding: EdgeInsets.all(16.0),
