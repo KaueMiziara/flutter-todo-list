@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:todo_list/components/sections/page_header.dart';
-import 'package:todo_list/themes/todo_colors.dart';
+import 'package:todo_list/presentation/components/sections/page_header.dart';
+import 'package:todo_list/presentation/themes/todo_colors.dart';
 
 class NewTaskPage extends StatelessWidget {
   const NewTaskPage({super.key});

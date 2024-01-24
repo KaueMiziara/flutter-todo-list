@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:todo_list/components/elements/task_card.dart';
+import 'package:todo_list/presentation/components/elements/task_card.dart';
 
 class TaskBox extends StatelessWidget {
   const TaskBox({super.key});

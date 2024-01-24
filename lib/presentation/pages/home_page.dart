@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:todo_list/components/sections/header.dart';
-import 'package:todo_list/components/sections/task_box.dart';
-import 'package:todo_list/pages/new_task_page.dart';
-import 'package:todo_list/themes/todo_colors.dart';
+import 'package:todo_list/presentation/components/sections/header.dart';
+import 'package:todo_list/presentation/components/sections/task_box.dart';
+import 'package:todo_list/presentation/pages/new_task_page.dart';
+import 'package:todo_list/presentation/themes/todo_colors.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
