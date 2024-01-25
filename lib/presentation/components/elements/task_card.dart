@@ -14,26 +14,31 @@ class _TaskCardState extends State<TaskCard> {
 
   @override
   Widget build(BuildContext context) {
-    return Row(
-      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+    return Column(
       children: [
-        const Icon(Icons.circle, color: Colors.amber),
-        Column(
+        Row(
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [
-            Text(
-              widget.taskName,
-              style: const TextStyle(fontWeight: FontWeight.bold),
+            const Icon(Icons.circle, color: Colors.amber),
+            Column(
+              children: [
+                Text(
+                  widget.taskName,
+                  style: const TextStyle(fontWeight: FontWeight.bold),
+                ),
+                const Text("Day - Time"),
+              ],
             ),
-            const Text("Day - Time"),
+            Checkbox(
+                value: _isChecked,
+                onChanged: (stateBool) {
+                  setState(() {
+                    _isChecked = stateBool;
+                  });
+                }),
           ],
         ),
-        Checkbox(
-            value: _isChecked,
-            onChanged: (stateBool) {
-              setState(() {
-                _isChecked = stateBool;
-              });
-            }),
+        const Divider(),
       ],
     );
   }
