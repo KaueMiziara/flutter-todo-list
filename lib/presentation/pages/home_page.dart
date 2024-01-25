@@ -15,12 +15,12 @@ class HomePage extends StatelessWidget {
         clipBehavior: Clip.none,
         children: [
           const Header(),
-          const Padding(
-            padding: EdgeInsets.fromLTRB(0, 158, 0, 16),
+          Padding(
+            padding: const EdgeInsets.fromLTRB(0, 158, 0, 16),
             child: Column(
               children: [
                 TaskBox(),
-                Text(
+                const Text(
                   "Completed",
                   style: TextStyle(fontWeight: FontWeight.bold),
                 ),

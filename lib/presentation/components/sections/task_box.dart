@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:todo_list/presentation/components/elements/task_card.dart';
+import 'package:todo_list/presentation/view_models/tasks_view_model.dart';
 
 class TaskBox extends StatelessWidget {
-  const TaskBox({super.key});
+  TaskBox({super.key});
+
+  final TasksViewModel _viewModel = TasksViewModel();
 
   @override
   Widget build(BuildContext context) {
@@ -13,18 +15,11 @@ class TaskBox extends StatelessWidget {
         decoration: const BoxDecoration(
             color: Color.fromRGBO(250, 250, 250, 1.0),
             borderRadius: BorderRadius.all(Radius.circular(15))),
-        child: const SingleChildScrollView(
-          padding: EdgeInsets.fromLTRB(0, 16, 0, 16),
+        child: SingleChildScrollView(
+          padding: const EdgeInsets.fromLTRB(0, 16, 0, 16),
           child: Column(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-            children: [
-              TaskCard(taskName: "Item 1"),
-              TaskCard(taskName: "Item 2"),
-              TaskCard(taskName: "Item 3"),
-              TaskCard(taskName: "Item 4"),
-              TaskCard(taskName: "Item 5"),
-              TaskCard(taskName: "Item 6"),
-            ],
+            children: _viewModel.getCards(),
           ),
         ),
       ),
