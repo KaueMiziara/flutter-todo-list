@@ -59,29 +59,61 @@ class NewTaskPage extends StatelessWidget {
               child: Row(
                 children: [
                   Expanded(
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Text(
-                          "Date",
-                          style: TextStyle(
-                              fontSize: 14, fontWeight: FontWeight.bold),
-                        ),
-                        Text("Date placeholder")
-                      ],
+                    child: Padding(
+                      padding: EdgeInsets.only(right: 8.0),
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text(
+                            "Date",
+                            style: TextStyle(
+                                fontSize: 14, fontWeight: FontWeight.bold),
+                          ),
+                          TextField(
+                            decoration: InputDecoration(
+                              labelText: "Date",
+                              filled: true,
+                              fillColor: Colors.white,
+                              suffixIcon: Icon(Icons.calendar_today_outlined),
+                              enabledBorder: OutlineInputBorder(
+                                borderSide: BorderSide.none,
+                              ),
+                              focusedBorder: OutlineInputBorder(
+                                  borderSide:
+                                      BorderSide(color: TodoColors.blue)),
+                            ),
+                          ),
+                        ],
+                      ),
                     ),
                   ),
                   Expanded(
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Text(
-                          "Time",
-                          style: TextStyle(
-                              fontSize: 14, fontWeight: FontWeight.bold),
-                        ),
-                        Text("Time placeholder")
-                      ],
+                    child: Padding(
+                      padding: EdgeInsets.only(right: 8.0),
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text(
+                            "Time",
+                            style: TextStyle(
+                                fontSize: 14, fontWeight: FontWeight.bold),
+                          ),
+                          TextField(
+                            decoration: InputDecoration(
+                              labelText: "Time",
+                              filled: true,
+                              fillColor: Colors.white,
+                              suffixIcon: Icon(Icons.schedule),
+                              enabledBorder: OutlineInputBorder(
+                                borderSide: BorderSide.none,
+                              ),
+                              focusedBorder: OutlineInputBorder(
+                                  borderSide:
+                                      BorderSide(color: TodoColors.blue)),
+                            ),
+                          ),
+                        ],
+                      ),
                     ),
                   ),
                 ],
