@@ -97,32 +97,29 @@ class NewTaskPage extends StatelessWidget {
                     ),
                   ),
                   Expanded(
-                    child: Padding(
-                      padding: EdgeInsets.only(right: 8.0),
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Text(
-                            "Time",
-                            style: TextStyle(
-                                fontSize: 14, fontWeight: FontWeight.bold),
-                          ),
-                          TextField(
-                            decoration: InputDecoration(
-                              labelText: "Time",
-                              filled: true,
-                              fillColor: Colors.white,
-                              suffixIcon: Icon(Icons.schedule),
-                              enabledBorder: OutlineInputBorder(
-                                borderSide: BorderSide.none,
-                              ),
-                              focusedBorder: OutlineInputBorder(
-                                  borderSide:
-                                      BorderSide(color: TodoColors.blue)),
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text(
+                          "Time",
+                          style: TextStyle(
+                              fontSize: 14, fontWeight: FontWeight.bold),
+                        ),
+                        TextField(
+                          decoration: InputDecoration(
+                            labelText: "Time",
+                            filled: true,
+                            fillColor: Colors.white,
+                            suffixIcon: Icon(Icons.schedule),
+                            enabledBorder: OutlineInputBorder(
+                              borderSide: BorderSide.none,
                             ),
+                            focusedBorder: OutlineInputBorder(
+                                borderSide:
+                                    BorderSide(color: TodoColors.blue)),
                           ),
-                        ],
-                      ),
+                        ),
+                      ],
                     ),
                   ),
                 ],
