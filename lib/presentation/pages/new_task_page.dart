@@ -24,7 +24,16 @@ class NewTaskPage extends StatelessWidget {
                     style: TextStyle(fontSize: 14, fontWeight: FontWeight.bold),
                   ),
                   TextField(
-                    decoration: InputDecoration(labelText: 'Task Name'),
+                    decoration: InputDecoration(
+                      labelText: 'Task Name',
+                      filled: true,
+                      fillColor: Colors.white,
+                      enabledBorder: OutlineInputBorder(
+                        borderSide: BorderSide.none,
+                      ),
+                      focusedBorder: OutlineInputBorder(
+                          borderSide: BorderSide(color: TodoColors.blue)),
+                    ),
                   ),
                 ],
               ),
@@ -129,7 +138,16 @@ class NewTaskPage extends StatelessWidget {
                     style: TextStyle(fontSize: 14, fontWeight: FontWeight.bold),
                   ),
                   TextField(
-                    decoration: InputDecoration(labelText: 'Description'),
+                    decoration: InputDecoration(
+                      labelText: 'Description',
+                      filled: true,
+                      fillColor: Colors.white,
+                      enabledBorder: OutlineInputBorder(
+                        borderSide: BorderSide.none,
+                      ),
+                      focusedBorder: OutlineInputBorder(
+                          borderSide: BorderSide(color: TodoColors.blue)),
+                    ),
                   ),
                 ],
               ),
