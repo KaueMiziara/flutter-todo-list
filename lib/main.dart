@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:todo_list/pages/home_page.dart';
+import 'package:todo_list/presentation/pages/home_page.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(const TodoListApp());
 }
 
-class MyApp extends StatelessWidget {
-  const MyApp({super.key});
+class TodoListApp extends StatelessWidget {
+  const TodoListApp({super.key});
 
   @override
   Widget build(BuildContext context) {

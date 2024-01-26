@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:todo_list/components/sections/header.dart';
-import 'package:todo_list/components/sections/task_box.dart';
-import 'package:todo_list/pages/new_task_page.dart';
-import 'package:todo_list/themes/todo_colors.dart';
+import 'package:todo_list/presentation/components/sections/header.dart';
+import 'package:todo_list/presentation/components/sections/task_box.dart';
+import 'package:todo_list/presentation/pages/new_task_page.dart';
+import 'package:todo_list/presentation/themes/todo_colors.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
@@ -15,12 +15,12 @@ class HomePage extends StatelessWidget {
         clipBehavior: Clip.none,
         children: [
           const Header(),
-          const Padding(
-            padding: EdgeInsets.fromLTRB(0, 158, 0, 16),
+          Padding(
+            padding: const EdgeInsets.fromLTRB(0, 158, 0, 16),
             child: Column(
               children: [
                 TaskBox(),
-                Text(
+                const Text(
                   "Completed",
                   style: TextStyle(fontWeight: FontWeight.bold),
                 ),
