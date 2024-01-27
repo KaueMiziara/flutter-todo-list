@@ -11,6 +11,7 @@ class NewTaskPage extends StatefulWidget {
 
 class _NewTaskPageState extends State<NewTaskPage> {
   final TextEditingController _dateController = TextEditingController();
+  final TextEditingController _timeController = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -108,17 +109,18 @@ class _NewTaskPageState extends State<NewTaskPage> {
                       ),
                     ),
                   ),
-                  const Expanded(
+                  Expanded(
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        Text(
+                        const Text(
                           "Time",
                           style: TextStyle(
                               fontSize: 14, fontWeight: FontWeight.bold),
                         ),
                         TextField(
-                          decoration: InputDecoration(
+                          controller: _timeController,
+                          decoration: const InputDecoration(
                             labelText: "Time",
                             filled: true,
                             fillColor: Colors.white,
@@ -129,6 +131,10 @@ class _NewTaskPageState extends State<NewTaskPage> {
                             focusedBorder: OutlineInputBorder(
                                 borderSide: BorderSide(color: TodoColors.blue)),
                           ),
+                          readOnly: true,
+                          onTap: () {
+                            _selectTime();
+                          },
                         ),
                       ],
                     ),
@@ -177,6 +183,19 @@ class _NewTaskPageState extends State<NewTaskPage> {
     if (selectedDate != null) {
       setState(() {
         _dateController.text = selectedDate.toString().split(" ")[0];
+      });
+    }
+  }
+
+  void _selectTime() async {
+    TimeOfDay? selectedTime = await showTimePicker(
+      context: context,
+      initialTime: TimeOfDay.now(),
+    );
+
+    if (selectedTime != null) {
+      setState(() {
+        _timeController.text = selectedTime.format(context).toString();
       });
     }
   }
