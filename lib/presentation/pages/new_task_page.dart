@@ -2,19 +2,26 @@ import 'package:flutter/material.dart';
 import 'package:todo_list/presentation/components/sections/page_header.dart';
 import 'package:todo_list/presentation/themes/todo_colors.dart';
 
-class NewTaskPage extends StatelessWidget {
+class NewTaskPage extends StatefulWidget {
   const NewTaskPage({super.key});
 
   @override
+  State<NewTaskPage> createState() => _NewTaskPageState();
+}
+
+class _NewTaskPageState extends State<NewTaskPage> {
+  final TextEditingController _dateController = TextEditingController();
+
+  @override
   Widget build(BuildContext context) {
-    return const Scaffold(
-      appBar: PageHeader(screenTitle: "New Task"),
+    return Scaffold(
+      appBar: const PageHeader(screenTitle: "New Task"),
       backgroundColor: TodoColors.gray,
       body: SingleChildScrollView(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [
-            Padding(
+            const Padding(
               padding: EdgeInsets.all(16.0),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
@@ -38,7 +45,7 @@ class NewTaskPage extends StatelessWidget {
                 ],
               ),
             ),
-            Padding(
+            const Padding(
               padding: EdgeInsets.all(16.0),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.start,
@@ -64,22 +71,23 @@ class NewTaskPage extends StatelessWidget {
               ),
             ),
             Padding(
-              padding: EdgeInsets.all(16.0),
+              padding: const EdgeInsets.all(16.0),
               child: Row(
                 children: [
                   Expanded(
                     child: Padding(
-                      padding: EdgeInsets.only(right: 8.0),
+                      padding: const EdgeInsets.only(right: 8.0),
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          Text(
+                          const Text(
                             "Date",
                             style: TextStyle(
                                 fontSize: 14, fontWeight: FontWeight.bold),
                           ),
                           TextField(
-                            decoration: InputDecoration(
+                            controller: _dateController,
+                            decoration: const InputDecoration(
                               labelText: "Date",
                               filled: true,
                               fillColor: Colors.white,
@@ -91,12 +99,16 @@ class NewTaskPage extends StatelessWidget {
                                   borderSide:
                                       BorderSide(color: TodoColors.blue)),
                             ),
+                            readOnly: true,
+                            onTap: () {
+                              _selectDate();
+                            },
                           ),
                         ],
                       ),
                     ),
                   ),
-                  Expanded(
+                  const Expanded(
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
@@ -115,8 +127,7 @@ class NewTaskPage extends StatelessWidget {
                               borderSide: BorderSide.none,
                             ),
                             focusedBorder: OutlineInputBorder(
-                                borderSide:
-                                    BorderSide(color: TodoColors.blue)),
+                                borderSide: BorderSide(color: TodoColors.blue)),
                           ),
                         ),
                       ],
@@ -125,7 +136,7 @@ class NewTaskPage extends StatelessWidget {
                 ],
               ),
             ),
-            Padding(
+            const Padding(
               padding: EdgeInsets.all(16.0),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
@@ -153,5 +164,20 @@ class NewTaskPage extends StatelessWidget {
         ),
       ),
     );
+  }
+
+  void _selectDate() async {
+    DateTime? selectedDate = await showDatePicker(
+      context: context,
+      initialDate: DateTime.now(),
+      firstDate: DateTime(2010),
+      lastDate: DateTime(2030),
+    );
+
+    if (selectedDate != null) {
+      setState(() {
+        _dateController.text = selectedDate.toString().split(" ")[0];
+      });
+    }
   }
 }
