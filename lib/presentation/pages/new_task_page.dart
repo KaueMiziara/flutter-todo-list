@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:todo_list/presentation/components/elements/task_page/task_text_input.dart';
 import 'package:todo_list/presentation/components/sections/page_header.dart';
 import 'package:todo_list/presentation/themes/todo_colors.dart';
 
@@ -24,26 +25,9 @@ class _NewTaskPageState extends State<NewTaskPage> {
           children: [
             const Padding(
               padding: EdgeInsets.all(16.0),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Text(
-                    "Name",
-                    style: TextStyle(fontSize: 14, fontWeight: FontWeight.bold),
-                  ),
-                  TextField(
-                    decoration: InputDecoration(
-                      labelText: 'Task Name',
-                      filled: true,
-                      fillColor: Colors.white,
-                      enabledBorder: OutlineInputBorder(
-                        borderSide: BorderSide.none,
-                      ),
-                      focusedBorder: OutlineInputBorder(
-                          borderSide: BorderSide(color: TodoColors.blue)),
-                    ),
-                  ),
-                ],
+              child: TaskTextInput(
+                title: 'Name',
+                labelText: 'Task Name',
               ),
             ),
             const Padding(
