@@ -128,26 +128,9 @@ class _NewTaskPageState extends State<NewTaskPage> {
             ),
             const Padding(
               padding: EdgeInsets.all(16.0),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Text(
-                    "Description",
-                    style: TextStyle(fontSize: 14, fontWeight: FontWeight.bold),
-                  ),
-                  TextField(
-                    decoration: InputDecoration(
-                      labelText: 'Description',
-                      filled: true,
-                      fillColor: Colors.white,
-                      enabledBorder: OutlineInputBorder(
-                        borderSide: BorderSide.none,
-                      ),
-                      focusedBorder: OutlineInputBorder(
-                          borderSide: BorderSide(color: TodoColors.blue)),
-                    ),
-                  ),
-                ],
+              child: TaskTextInput(
+                title: 'Description',
+                labelText: 'Description',
               ),
             ),
           ],
