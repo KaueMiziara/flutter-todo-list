@@ -17,7 +17,10 @@ class TaskTextInput extends StatelessWidget {
         children: [
           Text(
             title,
-            style: const TextStyle(fontSize: 14, fontWeight: FontWeight.bold),
+            style: const TextStyle(
+              fontSize: 14,
+              fontWeight: FontWeight.bold,
+            ),
           ),
           TextField(
             decoration: InputDecoration(
@@ -28,7 +31,9 @@ class TaskTextInput extends StatelessWidget {
                 borderSide: BorderSide.none,
               ),
               focusedBorder: const OutlineInputBorder(
-                  borderSide: BorderSide(color: TodoColors.blue)),
+                borderSide: BorderSide(color: TodoColors.blue),
+              ),
+              floatingLabelBehavior: FloatingLabelBehavior.never,
             ),
           ),
         ],
