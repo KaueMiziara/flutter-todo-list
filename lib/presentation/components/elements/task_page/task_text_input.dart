@@ -10,26 +10,29 @@ class TaskTextInput extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: [
-        Text(
-          title,
-          style: const TextStyle(fontSize: 14, fontWeight: FontWeight.bold),
-        ),
-        TextField(
-          decoration: InputDecoration(
-            labelText: labelText,
-            filled: true,
-            fillColor: Colors.white,
-            enabledBorder: const OutlineInputBorder(
-              borderSide: BorderSide.none,
-            ),
-            focusedBorder: const OutlineInputBorder(
-                borderSide: BorderSide(color: TodoColors.blue)),
+    return Padding(
+      padding: const EdgeInsets.all(16.0),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Text(
+            title,
+            style: const TextStyle(fontSize: 14, fontWeight: FontWeight.bold),
           ),
-        ),
-      ],
+          TextField(
+            decoration: InputDecoration(
+              labelText: labelText,
+              filled: true,
+              fillColor: Colors.white,
+              enabledBorder: const OutlineInputBorder(
+                borderSide: BorderSide.none,
+              ),
+              focusedBorder: const OutlineInputBorder(
+                  borderSide: BorderSide(color: TodoColors.blue)),
+            ),
+          ),
+        ],
+      ),
     );
   }
 }

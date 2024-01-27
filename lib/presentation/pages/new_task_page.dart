@@ -23,12 +23,9 @@ class _NewTaskPageState extends State<NewTaskPage> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [
-            const Padding(
-              padding: EdgeInsets.all(16.0),
-              child: TaskTextInput(
-                title: 'Name',
-                labelText: 'Task Name',
-              ),
+            const TaskTextInput(
+              title: 'Name',
+              labelText: 'Task Name',
             ),
             const Padding(
               padding: EdgeInsets.all(16.0),
@@ -126,12 +123,9 @@ class _NewTaskPageState extends State<NewTaskPage> {
                 ],
               ),
             ),
-            const Padding(
-              padding: EdgeInsets.all(16.0),
-              child: TaskTextInput(
-                title: 'Description',
-                labelText: 'Description',
-              ),
+            const TaskTextInput(
+              title: 'Description',
+              labelText: 'Description',
             ),
           ],
         ),
