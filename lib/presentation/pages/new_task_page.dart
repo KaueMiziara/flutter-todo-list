@@ -5,14 +5,9 @@ import 'package:todo_list/presentation/components/sections/task_page/task_text_i
 import 'package:todo_list/presentation/components/sections/page_header.dart';
 import 'package:todo_list/presentation/themes/todo_colors.dart';
 
-class NewTaskPage extends StatefulWidget {
+class NewTaskPage extends StatelessWidget {
   const NewTaskPage({super.key});
 
-  @override
-  State<NewTaskPage> createState() => _NewTaskPageState();
-}
-
-class _NewTaskPageState extends State<NewTaskPage> {
   @override
   Widget build(BuildContext context) {
     return const Scaffold(
