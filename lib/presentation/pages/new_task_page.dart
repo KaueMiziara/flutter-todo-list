@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:todo_list/presentation/components/elements/task_page/task_category_picker.dart';
 import 'package:todo_list/presentation/components/elements/task_page/task_text_input.dart';
 import 'package:todo_list/presentation/components/sections/page_header.dart';
 import 'package:todo_list/presentation/themes/todo_colors.dart';
@@ -23,35 +24,16 @@ class _NewTaskPageState extends State<NewTaskPage> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [
+            // Name
             const TaskTextInput(
               title: 'Name',
               labelText: 'Task Name',
             ),
-            const Padding(
-              padding: EdgeInsets.all(16.0),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.start,
-                children: [
-                  Text(
-                    "Category",
-                    style: TextStyle(fontSize: 14, fontWeight: FontWeight.bold),
-                  ),
-                  Padding(
-                    padding: EdgeInsets.only(left: 24.0),
-                    child: Padding(
-                      padding: EdgeInsets.only(left: 16.0),
-                      child: Row(
-                        children: [
-                          Icon(Icons.circle, color: Colors.red),
-                          Icon(Icons.circle, color: Colors.green),
-                          Icon(Icons.circle, color: Colors.blue),
-                        ],
-                      ),
-                    ),
-                  ),
-                ],
-              ),
-            ),
+
+            // Category
+            const TaskCategoryPicker(),
+
+            // Date and Time
             Padding(
               padding: const EdgeInsets.all(16.0),
               child: Row(
@@ -123,6 +105,8 @@ class _NewTaskPageState extends State<NewTaskPage> {
                 ],
               ),
             ),
+
+            // Description
             const TaskTextInput(
               title: 'Description',
               labelText: 'Description',
