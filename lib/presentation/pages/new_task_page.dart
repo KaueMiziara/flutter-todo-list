@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:todo_list/presentation/components/elements/task_page/task_category_picker.dart';
-import 'package:todo_list/presentation/components/elements/task_page/task_text_input.dart';
+import 'package:todo_list/presentation/components/sections/task_page/task_category_picker.dart';
+import 'package:todo_list/presentation/components/sections/task_page/task_text_input.dart';
 import 'package:todo_list/presentation/components/sections/page_header.dart';
 import 'package:todo_list/presentation/themes/todo_colors.dart';
 
