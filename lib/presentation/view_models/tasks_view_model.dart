@@ -9,18 +9,20 @@ class TasksViewModel {
   }
 
   void _populateList() {
-    _tasks.add(Task("1", "category", DateTime(1), "description"));
-    _tasks.add(Task("2", "category", DateTime(2), "description"));
-    _tasks.add(Task("3", "category", DateTime(3), "description"));
-    _tasks.add(Task("4", "category", DateTime(4), "description"));
-    _tasks.add(Task("5", "category", DateTime(5), "description"));
+    _tasks.add(Task(
+        id: "id1",
+        title: "title1",
+        date: DateTime(1),
+        category: "category",
+        description: "description",
+        completed: false));
   }
 
   List<TaskCard> getCards() {
     List<TaskCard> cardsList = [];
 
     for (var task in _tasks) {
-      cardsList.add(TaskCard(taskName: task.name));
+      cardsList.add(TaskCard(taskName: task.title));
     }
 
     return cardsList;
