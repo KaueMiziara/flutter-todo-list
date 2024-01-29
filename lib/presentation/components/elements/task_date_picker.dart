@@ -34,6 +34,7 @@ class _TaskDatePickerState extends State<TaskDatePicker> {
               ),
               focusedBorder: OutlineInputBorder(
                   borderSide: BorderSide(color: TodoColors.blue)),
+              floatingLabelBehavior: FloatingLabelBehavior.never,
             ),
             readOnly: true,
             onTap: () {
