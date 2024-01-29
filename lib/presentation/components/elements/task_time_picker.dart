@@ -32,6 +32,7 @@ class _TaskTimePickerState extends State<TaskTimePicker> {
             ),
             focusedBorder: OutlineInputBorder(
                 borderSide: BorderSide(color: TodoColors.blue)),
+            floatingLabelBehavior: FloatingLabelBehavior.never,
           ),
           readOnly: true,
           onTap: () {
