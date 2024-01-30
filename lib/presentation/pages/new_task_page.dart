@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 import 'package:todo_list/presentation/components/sections/task_page/task_category_picker.dart';
 import 'package:todo_list/presentation/components/sections/task_page/task_date_and_time_pickers.dart';
 import 'package:todo_list/presentation/components/sections/task_page/task_text_input.dart';
 import 'package:todo_list/presentation/components/sections/page_header.dart';
 import 'package:todo_list/presentation/themes/todo_colors.dart';
+import 'package:todo_list/presentation/view_models/tasks_view_model.dart';
 
 class NewTaskPage extends StatelessWidget {
   NewTaskPage({super.key});
@@ -46,6 +48,7 @@ class NewTaskPage extends StatelessWidget {
               controller: descriptionController,
             ),
 
+            // Save Button
             ElevatedButton(
               style: ElevatedButton.styleFrom(
                   backgroundColor: TodoColors.blue,
@@ -56,7 +59,21 @@ class NewTaskPage extends StatelessWidget {
                     fontWeight: FontWeight.bold,
                   )),
               child: const Text("Save"),
-              onPressed: () {},
+              onPressed: () {
+                TasksViewModel viewModel = Provider.of<TasksViewModel>(
+                  context,
+                  listen: false,
+                );
+
+                viewModel.addTask(
+                  title: titleController.text,
+                  date: dateController.text,
+                  category: "TASKS",
+                  description: descriptionController.text,
+                );
+
+                Navigator.pop(context);
+              },
             )
           ],
         ),
