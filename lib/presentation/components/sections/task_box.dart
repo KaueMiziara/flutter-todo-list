@@ -15,12 +15,12 @@ class TaskBox extends StatelessWidget {
         decoration: const BoxDecoration(
             color: Color.fromRGBO(250, 250, 250, 1.0),
             borderRadius: BorderRadius.all(Radius.circular(15))),
-        child: SingleChildScrollView(
+        child: ListView.builder(
           padding: const EdgeInsets.fromLTRB(0, 16, 0, 16),
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-            children: _viewModel.getCards(),
-          ),
+          itemCount: _viewModel.getCards().length,
+          itemBuilder: (context, index) {
+            return _viewModel.getCards()[index];
+          },
         ),
       ),
     );
