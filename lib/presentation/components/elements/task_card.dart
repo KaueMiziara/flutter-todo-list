@@ -2,11 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:todo_list/models/task.dart';
 
 class TaskCard extends StatefulWidget {
-  final String taskName;
+  final String taskTitle;
 
-  const TaskCard({super.key, required this.taskName});
+  const TaskCard({super.key, required this.taskTitle});
 
-  TaskCard.fromTask(Task task, {super.key}) : taskName = task.title;
+  TaskCard.fromTask(Task task, {super.key}) : taskTitle = task.title;
 
   @override
   State<TaskCard> createState() => _TaskCardState();
@@ -26,7 +26,7 @@ class _TaskCardState extends State<TaskCard> {
             Column(
               children: [
                 Text(
-                  widget.taskName,
+                  widget.taskTitle,
                   style: const TextStyle(fontWeight: FontWeight.bold),
                 ),
                 const Text("Day - Time"),
