@@ -10,30 +10,44 @@ class NewTaskPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
-      appBar: PageHeader(screenTitle: "New Task"),
+    return Scaffold(
+      appBar: const PageHeader(screenTitle: "New Task"),
       backgroundColor: TodoColors.gray,
       body: SingleChildScrollView(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          mainAxisSize: MainAxisSize.min,
           children: [
             // Name
-            TaskTextInput(
+            const TaskTextInput(
               title: 'Name',
               labelText: 'Task Name',
             ),
 
             // Category
-            TaskCategoryPicker(),
+            const TaskCategoryPicker(),
 
             // Date and Time
-            TaskDateAndTimePickers(),
+            const TaskDateAndTimePickers(),
 
             // Description
-            TaskTextInput(
+            const TaskTextInput(
               title: 'Description',
               labelText: 'Description',
             ),
+
+            ElevatedButton(
+              style: ElevatedButton.styleFrom(
+                  backgroundColor: TodoColors.blue,
+                  foregroundColor: Colors.black,
+                  fixedSize: const Size(358, 56),
+                  textStyle: const TextStyle(
+                    fontSize: 16,
+                    fontWeight: FontWeight.bold,
+                  )),
+              child: const Text("Save"),
+              onPressed: () {},
+            )
           ],
         ),
       ),
