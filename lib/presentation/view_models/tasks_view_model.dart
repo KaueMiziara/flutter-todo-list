@@ -23,7 +23,7 @@ class TasksViewModel {
     List<TaskCard> cardsList = [];
 
     for (var task in _tasks) {
-      cardsList.add(TaskCard.fromTask(task));
+      cardsList.add(TaskCard(task: task));
     }
 
     return cardsList;
