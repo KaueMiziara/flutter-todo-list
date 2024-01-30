@@ -1,8 +1,16 @@
+import 'package:flutter/cupertino.dart';
 import 'package:todo_list/models/task.dart';
 import 'package:todo_list/presentation/components/elements/task_card.dart';
 
-class TasksViewModel {
+class TasksViewModel extends ChangeNotifier {
   final List<Task> _tasks = [];
+
+  List<Task> get tasks => _tasks;
+
+  void addTask(Task task) {
+    _tasks.add(task);
+    notifyListeners();
+  }
 
   TasksViewModel() {
     _populateList();
