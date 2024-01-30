@@ -7,7 +7,21 @@ class TasksViewModel extends ChangeNotifier {
 
   List<Task> get tasks => _tasks;
 
-  void addTask(Task task) {
+  void addTask({
+    required String title,
+    required String date,
+    required String category,
+    required String description,
+  }) {
+    Task task = Task(
+      id: 'id$date',
+      title: title,
+      date: DateTime.parse(date),
+      category: category,
+      description: description,
+      completed: false,
+    );
+
     _tasks.add(task);
     notifyListeners();
   }
