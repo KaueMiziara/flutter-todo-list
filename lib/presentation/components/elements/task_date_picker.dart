@@ -2,15 +2,15 @@ import 'package:flutter/material.dart';
 import 'package:todo_list/presentation/themes/todo_colors.dart';
 
 class TaskDatePicker extends StatefulWidget {
-  const TaskDatePicker({super.key});
+  const TaskDatePicker({super.key, required this.dateController});
+
+  final TextEditingController dateController;
 
   @override
   State<TaskDatePicker> createState() => _TaskDatePickerState();
 }
 
 class _TaskDatePickerState extends State<TaskDatePicker> {
-  final TextEditingController _dateController = TextEditingController();
-
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -23,7 +23,7 @@ class _TaskDatePickerState extends State<TaskDatePicker> {
             style: TextStyle(fontSize: 14, fontWeight: FontWeight.bold),
           ),
           TextField(
-            controller: _dateController,
+            controller: widget.dateController,
             decoration: const InputDecoration(
               labelText: "Date",
               filled: true,
@@ -56,7 +56,7 @@ class _TaskDatePickerState extends State<TaskDatePicker> {
 
     if (selectedDate != null) {
       setState(() {
-        _dateController.text = selectedDate.toString().split(" ")[0];
+        widget.dateController.text = selectedDate.toString().split(" ")[0];
       });
     }
   }

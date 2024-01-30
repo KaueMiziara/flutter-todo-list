@@ -10,6 +10,7 @@ class NewTaskPage extends StatelessWidget {
 
   final TextEditingController titleController = TextEditingController();
   final TextEditingController descriptionController = TextEditingController();
+  final TextEditingController dateController = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -32,7 +33,9 @@ class NewTaskPage extends StatelessWidget {
             const TaskCategoryPicker(),
 
             // Date and Time
-            const TaskDateAndTimePickers(),
+            TaskDateAndTimePickers(
+              dateController: dateController,
+            ),
 
             // Description
             TaskTextInput(
