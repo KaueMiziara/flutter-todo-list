@@ -3,9 +3,14 @@ import 'package:todo_list/presentation/components/elements/task_date_picker.dart
 import 'package:todo_list/presentation/components/elements/task_time_picker.dart';
 
 class TaskDateAndTimePickers extends StatelessWidget {
-  const TaskDateAndTimePickers({super.key, required this.dateController});
+  const TaskDateAndTimePickers({
+    super.key,
+    required this.dateController,
+    required this.timeController,
+  });
 
   final TextEditingController dateController;
+  final TextEditingController timeController;
 
   @override
   Widget build(BuildContext context) {
@@ -16,8 +21,8 @@ class TaskDateAndTimePickers extends StatelessWidget {
           Expanded(
             child: TaskDatePicker(dateController: dateController),
           ),
-          const Expanded(
-            child: TaskTimePicker(),
+          Expanded(
+            child: TaskTimePicker(timeController: timeController),
           ),
         ],
       ),

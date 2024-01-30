@@ -11,6 +11,7 @@ class NewTaskPage extends StatelessWidget {
   final TextEditingController titleController = TextEditingController();
   final TextEditingController descriptionController = TextEditingController();
   final TextEditingController dateController = TextEditingController();
+  final TextEditingController timeController = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -35,6 +36,7 @@ class NewTaskPage extends StatelessWidget {
             // Date and Time
             TaskDateAndTimePickers(
               dateController: dateController,
+              timeController: timeController,
             ),
 
             // Description
