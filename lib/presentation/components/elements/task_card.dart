@@ -1,9 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:todo_list/models/task.dart';
 
 class TaskCard extends StatefulWidget {
+  final String taskName;
+
   const TaskCard({super.key, required this.taskName});
 
-  final String taskName;
+  TaskCard.fromTask(Task task, {super.key}) : taskName = task.title;
 
   @override
   State<TaskCard> createState() => _TaskCardState();
