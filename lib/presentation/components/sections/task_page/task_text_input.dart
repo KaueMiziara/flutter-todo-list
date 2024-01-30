@@ -2,11 +2,17 @@ import 'package:flutter/material.dart';
 import 'package:todo_list/presentation/themes/todo_colors.dart';
 
 class TaskTextInput extends StatelessWidget {
-  const TaskTextInput(
-      {super.key, required this.title, required this.labelText});
+  const TaskTextInput({
+    super.key,
+    required this.title,
+    required this.labelText,
+    required this.controller,
+  });
 
   final String title;
   final String labelText;
+
+  final TextEditingController controller;
 
   @override
   Widget build(BuildContext context) {
@@ -23,6 +29,7 @@ class TaskTextInput extends StatelessWidget {
             ),
           ),
           TextField(
+            controller: controller,
             decoration: InputDecoration(
               labelText: labelText,
               filled: true,

@@ -6,7 +6,10 @@ import 'package:todo_list/presentation/components/sections/page_header.dart';
 import 'package:todo_list/presentation/themes/todo_colors.dart';
 
 class NewTaskPage extends StatelessWidget {
-  const NewTaskPage({super.key});
+  NewTaskPage({super.key});
+
+  final TextEditingController titleController = TextEditingController();
+  final TextEditingController descriptionController = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -19,9 +22,10 @@ class NewTaskPage extends StatelessWidget {
           mainAxisSize: MainAxisSize.min,
           children: [
             // Name
-            const TaskTextInput(
+            TaskTextInput(
               title: 'Name',
               labelText: 'Task Name',
+              controller: titleController,
             ),
 
             // Category
@@ -31,9 +35,10 @@ class NewTaskPage extends StatelessWidget {
             const TaskDateAndTimePickers(),
 
             // Description
-            const TaskTextInput(
+            TaskTextInput(
               title: 'Description',
               labelText: 'Description',
+              controller: descriptionController,
             ),
 
             ElevatedButton(
