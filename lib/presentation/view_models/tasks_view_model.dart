@@ -15,7 +15,7 @@ class TasksViewModel extends ChangeNotifier {
     required String description,
   }) {
     DateTime dateTime = DateTime.parse(date);
-    String formattedDateTime = DateFormat('yyyy-MM-dd hh:mm').format(dateTime);
+    String formattedDateTime = DateFormat('MMM dd/yy - hh:mm').format(dateTime);
 
     Task task = Task(
       id: 'id$date',
