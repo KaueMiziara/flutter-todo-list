@@ -1,7 +1,7 @@
 class Task {
   final String id;
   final String title;
-  final DateTime date;
+  final String date;
   final String category; // TODO: change to enum
   final String description;
   final bool completed;

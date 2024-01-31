@@ -27,7 +27,7 @@ class _TaskCardState extends State<TaskCard> {
                   widget.task.title,
                   style: const TextStyle(fontWeight: FontWeight.bold),
                 ),
-                Text(widget.task.date.toString()),
+                Text(widget.task.date),
               ],
             ),
             Checkbox(
