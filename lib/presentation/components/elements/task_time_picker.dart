@@ -2,15 +2,15 @@ import 'package:flutter/material.dart';
 import 'package:todo_list/presentation/themes/todo_colors.dart';
 
 class TaskTimePicker extends StatefulWidget {
-  const TaskTimePicker({super.key});
+  const TaskTimePicker({super.key, required this.timeController});
+
+  final TextEditingController timeController;
 
   @override
   State<TaskTimePicker> createState() => _TaskTimePickerState();
 }
 
 class _TaskTimePickerState extends State<TaskTimePicker> {
-  final TextEditingController _timeController = TextEditingController();
-
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -21,7 +21,7 @@ class _TaskTimePickerState extends State<TaskTimePicker> {
           style: TextStyle(fontSize: 14, fontWeight: FontWeight.bold),
         ),
         TextField(
-          controller: _timeController,
+          controller: widget.timeController,
           decoration: const InputDecoration(
             labelText: "Time",
             filled: true,
@@ -51,7 +51,7 @@ class _TaskTimePickerState extends State<TaskTimePicker> {
 
     if (selectedTime != null) {
       setState(() {
-        _timeController.text = selectedTime.format(context).toString();
+        widget.timeController.text = selectedTime.format(context).toString();
       });
     }
   }

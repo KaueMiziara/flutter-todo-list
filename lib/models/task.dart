@@ -1,8 +1,16 @@
 class Task {
-  final String name;
+  final String id;
+  final String title;
+  final String date;
   final String category; // TODO: change to enum
-  final DateTime date;
   final String description;
+  final bool completed;
 
-  const Task(this.name, this.category, this.date, this.description);
+  Task(
+      {required this.id,
+      required this.title,
+      required this.date,
+      required this.category,
+      required this.description,
+      required this.completed});
 }

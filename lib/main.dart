@@ -1,8 +1,13 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 import 'package:todo_list/presentation/pages/home_page.dart';
+import 'package:todo_list/presentation/view_models/tasks_view_model.dart';
 
 void main() {
-  runApp(const TodoListApp());
+  runApp(ChangeNotifierProvider(
+    create: (context) => TasksViewModel(),
+    child: const TodoListApp(),
+  ));
 }
 
 class TodoListApp extends StatelessWidget {

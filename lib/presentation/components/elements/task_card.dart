@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:todo_list/models/task.dart';
 
 class TaskCard extends StatefulWidget {
-  const TaskCard({super.key, required this.taskName});
+  final Task task;
 
-  final String taskName;
+  const TaskCard({super.key, required this.task});
 
   @override
   State<TaskCard> createState() => _TaskCardState();
@@ -23,10 +24,10 @@ class _TaskCardState extends State<TaskCard> {
             Column(
               children: [
                 Text(
-                  widget.taskName,
+                  widget.task.title,
                   style: const TextStyle(fontWeight: FontWeight.bold),
                 ),
-                const Text("Day - Time"),
+                Text(widget.task.date),
               ],
             ),
             Checkbox(

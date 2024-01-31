@@ -15,12 +15,12 @@ class HomePage extends StatelessWidget {
         clipBehavior: Clip.none,
         children: [
           const Header(),
-          Padding(
-            padding: const EdgeInsets.fromLTRB(0, 158, 0, 16),
+          const Padding(
+            padding: EdgeInsets.fromLTRB(0, 158, 0, 16),
             child: Column(
               children: [
                 TaskBox(),
-                const Text(
+                Text(
                   "Completed",
                   style: TextStyle(fontWeight: FontWeight.bold),
                 ),
@@ -44,7 +44,7 @@ class HomePage extends StatelessWidget {
                   child: const Text("New Task"),
                   onPressed: () {
                     Navigator.of(context).push(MaterialPageRoute(
-                        builder: (context) => const NewTaskPage()));
+                        builder: (context) => NewTaskPage()));
                   },
                 )),
           )

@@ -1,28 +1,31 @@
+import 'package:flutter/cupertino.dart';
+import 'package:intl/intl.dart';
 import 'package:todo_list/models/task.dart';
-import 'package:todo_list/presentation/components/elements/task_card.dart';
 
-class TasksViewModel {
+class TasksViewModel extends ChangeNotifier {
   final List<Task> _tasks = [];
 
-  TasksViewModel() {
-    _populateList();
-  }
+  List<Task> get tasks => _tasks;
 
-  void _populateList() {
-    _tasks.add(Task("1", "category", DateTime(1), "description"));
-    _tasks.add(Task("2", "category", DateTime(2), "description"));
-    _tasks.add(Task("3", "category", DateTime(3), "description"));
-    _tasks.add(Task("4", "category", DateTime(4), "description"));
-    _tasks.add(Task("5", "category", DateTime(5), "description"));
-  }
+  void addTask({
+    required String title,
+    required String date,
+    required String category,
+    required String description,
+  }) {
+    DateTime dateTime = DateTime.parse(date);
+    String formattedDateTime = DateFormat('yyyy-MM-dd hh:mm').format(dateTime);
 
-  List<TaskCard> getCards() {
-    List<TaskCard> cardsList = [];
+    Task task = Task(
+      id: 'id$date',
+      title: title,
+      date: formattedDateTime,
+      category: category,
+      description: description,
+      completed: false,
+    );
 
-    for (var task in _tasks) {
-      cardsList.add(TaskCard(taskName: task.name));
-    }
-
-    return cardsList;
+    _tasks.add(task);
+    notifyListeners();
   }
 }
