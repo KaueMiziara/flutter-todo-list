@@ -28,40 +28,38 @@ class _TaskCategoryPickerState extends State<TaskCategoryPicker> {
             padding: const EdgeInsets.only(left: 24.0),
             child: Row(
               children: [
-                Radio(
-                  value: TaskCategory.task,
-                  groupValue: _selectedCategory,
-                  onChanged: (value) {
-                    setState(() {
-                      _selectedCategory = value as TaskCategory;
-                      widget.onCategoryChanged(_selectedCategory);
-                    });
-                  },
+                _categoryIcon(
+                  TaskCategory.task,
+                  icon: Icons.task,
                 ),
-                Radio(
-                  value: TaskCategory.event,
-                  groupValue: _selectedCategory,
-                  onChanged: (value) {
-                    setState(() {
-                      _selectedCategory = value as TaskCategory;
-                      widget.onCategoryChanged(_selectedCategory);
-                    });
-                  },
+                _categoryIcon(
+                  TaskCategory.event,
+                  icon: Icons.event,
                 ),
-                Radio(
-                  value: TaskCategory.achievement,
-                  groupValue: _selectedCategory,
-                  onChanged: (value) {
-                    setState(() {
-                      _selectedCategory = value as TaskCategory;
-                      widget.onCategoryChanged(_selectedCategory);
-                    });
-                  },
+                _categoryIcon(
+                  TaskCategory.achievement,
+                  icon: Icons.emoji_events,
                 ),
               ],
             ),
           ),
         ],
+      ),
+    );
+  }
+
+  Widget _categoryIcon(TaskCategory category, {required IconData icon}) {
+    return Padding(
+      padding: const EdgeInsets.all(16.0),
+      child: InkResponse(
+        child: Icon(
+          icon,
+          color: _selectedCategory == category ? Colors.blue : null,
+        ),
+        onTap: () => setState(() {
+          _selectedCategory = category;
+          widget.onCategoryChanged(_selectedCategory);
+        }),
       ),
     );
   }
