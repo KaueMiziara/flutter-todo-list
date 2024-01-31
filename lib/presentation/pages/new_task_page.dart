@@ -67,7 +67,7 @@ class NewTaskPage extends StatelessWidget {
 
                 viewModel.addTask(
                   title: titleController.text,
-                  date: dateController.text,
+                  date: '${dateController.text} ${timeController.text}',
                   category: "TASKS",
                   description: descriptionController.text,
                 );
