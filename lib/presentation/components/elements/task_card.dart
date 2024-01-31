@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:todo_list/models/task.dart';
+import 'package:todo_list/models/task_category.dart';
 
 class TaskCard extends StatefulWidget {
   final Task task;
@@ -17,27 +18,43 @@ class _TaskCardState extends State<TaskCard> {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        Row(
-          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-          children: [
-            const Icon(Icons.circle, color: Colors.amber),
-            Column(
-              children: [
-                Text(
-                  widget.task.title,
-                  style: const TextStyle(fontWeight: FontWeight.bold),
+        Padding(
+          padding: const EdgeInsets.only(left: 16.0),
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            children: [
+              Icon(switch (widget.task.category) {
+                TaskCategory.task => Icons.task,
+                TaskCategory.event => Icons.event,
+                TaskCategory.achievement => Icons.emoji_events,
+              }),
+              Expanded(
+                child: Padding(
+                  padding: const EdgeInsets.only(left: 12.0),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text(
+                        widget.task.title,
+                        style: const TextStyle(fontWeight: FontWeight.bold),
+                      ),
+                      Text(widget.task.date),
+                    ],
+                  ),
                 ),
-                Text(widget.task.date),
-              ],
-            ),
-            Checkbox(
-                value: _isChecked,
-                onChanged: (stateBool) {
-                  setState(() {
-                    _isChecked = stateBool;
-                  });
-                }),
-          ],
+              ),
+              Padding(
+                padding: const EdgeInsets.only(right: 16.0),
+                child: Checkbox(
+                    value: _isChecked,
+                    onChanged: (stateBool) {
+                      setState(() {
+                        _isChecked = stateBool;
+                      });
+                    }),
+              ),
+            ],
+          ),
         ),
         const Divider(),
       ],

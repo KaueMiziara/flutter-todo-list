@@ -1,8 +1,10 @@
+import 'package:todo_list/models/task_category.dart';
+
 class Task {
   final String id;
   final String title;
   final String date;
-  final String category; // TODO: change to enum
+  final TaskCategory category;
   final String description;
   final bool completed;
 

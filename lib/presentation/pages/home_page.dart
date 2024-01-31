@@ -44,7 +44,7 @@ class HomePage extends StatelessWidget {
                   child: const Text("New Task"),
                   onPressed: () {
                     Navigator.of(context).push(MaterialPageRoute(
-                        builder: (context) => NewTaskPage()));
+                        builder: (context) => const NewTaskPage()));
                   },
                 )),
           )

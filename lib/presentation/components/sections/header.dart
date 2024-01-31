@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:intl/intl.dart';
 import 'package:todo_list/presentation/themes/todo_colors.dart';
 
 class Header extends StatelessWidget {
@@ -9,20 +10,20 @@ class Header extends StatelessWidget {
     return Container(
       height: 234,
       color: TodoColors.blue,
-      child: const Padding(
-        padding: EdgeInsets.fromLTRB(16, 42, 16, 54),
+      child: Padding(
+        padding: const EdgeInsets.fromLTRB(16, 42, 16, 54),
         child: Center(
           child: Column(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
               Text(
-                "Month dd, yyyy",
-                style: TextStyle(
+                DateFormat('MMMM dd, yyyy').format(DateTime.now()).toString(),
+                style: const TextStyle(
                   color: Colors.white,
                   fontSize: 18,
                 ),
               ),
-              Text(
+              const Text(
                 "Todo List",
                 style: TextStyle(
                   color: Colors.white,
