@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:intl/intl.dart';
 import 'package:todo_list/models/task.dart';
+import 'package:todo_list/models/task_category.dart';
 
 class TasksViewModel extends ChangeNotifier {
   final List<Task> _tasks = [];
@@ -10,7 +11,7 @@ class TasksViewModel extends ChangeNotifier {
   void addTask({
     required String title,
     required String date,
-    required String category,
+    required TaskCategory category,
     required String description,
   }) {
     DateTime dateTime = DateTime.parse(date);

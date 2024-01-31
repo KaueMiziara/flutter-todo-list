@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'package:todo_list/models/task_category.dart';
 import 'package:todo_list/presentation/components/sections/task_page/task_category_picker.dart';
 import 'package:todo_list/presentation/components/sections/task_page/task_date_and_time_pickers.dart';
 import 'package:todo_list/presentation/components/sections/task_page/task_text_input.dart';
@@ -68,7 +69,7 @@ class NewTaskPage extends StatelessWidget {
                 viewModel.addTask(
                   title: titleController.text,
                   date: '${dateController.text} ${timeController.text}',
-                  category: "TASKS",
+                  category: TaskCategory.task,
                   description: descriptionController.text,
                 );
 
