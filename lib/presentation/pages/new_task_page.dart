@@ -8,13 +8,20 @@ import 'package:todo_list/presentation/components/sections/page_header.dart';
 import 'package:todo_list/presentation/themes/todo_colors.dart';
 import 'package:todo_list/presentation/view_models/tasks_view_model.dart';
 
-class NewTaskPage extends StatelessWidget {
-  NewTaskPage({super.key});
+class NewTaskPage extends StatefulWidget {
+  const NewTaskPage({super.key});
 
+  @override
+  State<NewTaskPage> createState() => _NewTaskPageState();
+}
+
+class _NewTaskPageState extends State<NewTaskPage> {
   final TextEditingController titleController = TextEditingController();
   final TextEditingController descriptionController = TextEditingController();
   final TextEditingController dateController = TextEditingController();
   final TextEditingController timeController = TextEditingController();
+
+  TaskCategory _selectedCategory = TaskCategory.task;
 
   @override
   Widget build(BuildContext context) {
@@ -34,7 +41,13 @@ class NewTaskPage extends StatelessWidget {
             ),
 
             // Category
-            const TaskCategoryPicker(),
+            TaskCategoryPicker(
+              onCategoryChanged: (category) {
+                setState(() {
+                  _selectedCategory = category;
+                });
+              },
+            ),
 
             // Date and Time
             TaskDateAndTimePickers(
@@ -69,7 +82,7 @@ class NewTaskPage extends StatelessWidget {
                 viewModel.addTask(
                   title: titleController.text,
                   date: '${dateController.text} ${timeController.text}',
-                  category: TaskCategory.task,
+                  category: _selectedCategory,
                   description: descriptionController.text,
                 );
 
