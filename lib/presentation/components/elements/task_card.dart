@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:todo_list/models/task.dart';
+import 'package:todo_list/models/task_category.dart';
 
 class TaskCard extends StatefulWidget {
   final Task task;
@@ -20,7 +21,11 @@ class _TaskCardState extends State<TaskCard> {
         Row(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [
-            const Icon(Icons.circle, color: Colors.amber),
+            Icon(switch (widget.task.category) {
+              TaskCategory.task => Icons.task,
+              TaskCategory.event => Icons.event,
+              TaskCategory.achievement => Icons.emoji_events,
+            }),
             Column(
               children: [
                 Text(
