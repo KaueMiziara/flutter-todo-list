@@ -1,8 +1,13 @@
 import 'package:flutter/material.dart';
 
-class TaskCategoryPicker extends StatelessWidget {
+class TaskCategoryPicker extends StatefulWidget {
   const TaskCategoryPicker({super.key});
 
+  @override
+  State<TaskCategoryPicker> createState() => _TaskCategoryPickerState();
+}
+
+class _TaskCategoryPickerState extends State<TaskCategoryPicker> {
   @override
   Widget build(BuildContext context) {
     return const Padding(
