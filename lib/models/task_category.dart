@@ -1,5 +1,11 @@
 enum TaskCategory {
   task,
   event,
-  achievement,
+  achievement;
+
+  String get name => switch (this) {
+        TaskCategory.task => "TASK",
+        TaskCategory.event => "EVENT",
+        TaskCategory.achievement => "ACHIEVEMENT",
+      };
 }
