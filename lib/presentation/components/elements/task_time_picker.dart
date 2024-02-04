@@ -18,7 +18,10 @@ class _TaskTimePickerState extends State<TaskTimePicker> {
       children: [
         const Text(
           "Time",
-          style: TextStyle(fontSize: 14, fontWeight: FontWeight.bold),
+          style: TextStyle(
+            fontSize: 14,
+            fontWeight: FontWeight.bold,
+          ),
         ),
         TextField(
           controller: widget.timeController,
@@ -31,7 +34,8 @@ class _TaskTimePickerState extends State<TaskTimePicker> {
               borderSide: BorderSide.none,
             ),
             focusedBorder: OutlineInputBorder(
-                borderSide: BorderSide(color: TodoColors.blue)),
+              borderSide: BorderSide(color: TodoColors.blue),
+            ),
             floatingLabelBehavior: FloatingLabelBehavior.never,
           ),
           readOnly: true,

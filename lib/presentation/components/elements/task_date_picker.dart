@@ -20,7 +20,10 @@ class _TaskDatePickerState extends State<TaskDatePicker> {
         children: [
           const Text(
             "Date",
-            style: TextStyle(fontSize: 14, fontWeight: FontWeight.bold),
+            style: TextStyle(
+              fontSize: 14,
+              fontWeight: FontWeight.bold,
+            ),
           ),
           TextField(
             controller: widget.dateController,
@@ -33,7 +36,8 @@ class _TaskDatePickerState extends State<TaskDatePicker> {
                 borderSide: BorderSide.none,
               ),
               focusedBorder: OutlineInputBorder(
-                  borderSide: BorderSide(color: TodoColors.blue)),
+                borderSide: BorderSide(color: TodoColors.blue),
+              ),
               floatingLabelBehavior: FloatingLabelBehavior.never,
             ),
             readOnly: true,

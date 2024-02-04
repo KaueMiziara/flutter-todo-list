@@ -18,7 +18,10 @@ class PageHeader extends StatelessWidget implements PreferredSizeWidget {
         child: CircleAvatar(
           backgroundColor: Colors.white,
           child: IconButton(
-            icon: const Icon(Icons.close, color: Colors.black),
+            icon: const Icon(
+              Icons.close,
+              color: Colors.black,
+            ),
             onPressed: () {
               Navigator.pop(context);
             },
