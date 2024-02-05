@@ -17,7 +17,7 @@ class _TaskTimePickerState extends State<TaskTimePicker> {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         const Text(
-          "Time",
+          'Time',
           style: TextStyle(
             fontSize: 14,
             fontWeight: FontWeight.bold,
@@ -26,7 +26,7 @@ class _TaskTimePickerState extends State<TaskTimePicker> {
         TextField(
           controller: widget.timeController,
           decoration: const InputDecoration(
-            labelText: "Time",
+            labelText: 'Time',
             filled: true,
             fillColor: Colors.white,
             suffixIcon: Icon(Icons.schedule),

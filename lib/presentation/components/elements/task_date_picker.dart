@@ -19,7 +19,7 @@ class _TaskDatePickerState extends State<TaskDatePicker> {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           const Text(
-            "Date",
+            'Date',
             style: TextStyle(
               fontSize: 14,
               fontWeight: FontWeight.bold,
@@ -28,7 +28,7 @@ class _TaskDatePickerState extends State<TaskDatePicker> {
           TextField(
             controller: widget.dateController,
             decoration: const InputDecoration(
-              labelText: "Date",
+              labelText: 'Date',
               filled: true,
               fillColor: Colors.white,
               suffixIcon: Icon(Icons.calendar_today_outlined),
