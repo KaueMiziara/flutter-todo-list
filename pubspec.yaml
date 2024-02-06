@@ -1,5 +1,5 @@
 name: todo_list
-description: "Todo List app made to learn Flutter."
+description: 'Todo List app made to learn Flutter.'
 
 publish_to: 'none' # Remove this line if you wish to publish to pub.dev
 
