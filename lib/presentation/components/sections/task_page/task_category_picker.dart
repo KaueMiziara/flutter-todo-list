@@ -21,8 +21,11 @@ class _TaskCategoryPickerState extends State<TaskCategoryPicker> {
         mainAxisAlignment: MainAxisAlignment.start,
         children: [
           const Text(
-            "Category",
-            style: TextStyle(fontSize: 14, fontWeight: FontWeight.bold),
+            'Category',
+            style: TextStyle(
+              fontSize: 14,
+              fontWeight: FontWeight.bold,
+            ),
           ),
           Padding(
             padding: const EdgeInsets.only(left: 24.0),

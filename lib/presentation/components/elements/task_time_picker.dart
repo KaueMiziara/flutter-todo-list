@@ -17,13 +17,16 @@ class _TaskTimePickerState extends State<TaskTimePicker> {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         const Text(
-          "Time",
-          style: TextStyle(fontSize: 14, fontWeight: FontWeight.bold),
+          'Time',
+          style: TextStyle(
+            fontSize: 14,
+            fontWeight: FontWeight.bold,
+          ),
         ),
         TextField(
           controller: widget.timeController,
           decoration: const InputDecoration(
-            labelText: "Time",
+            labelText: 'Time',
             filled: true,
             fillColor: Colors.white,
             suffixIcon: Icon(Icons.schedule),
@@ -31,7 +34,8 @@ class _TaskTimePickerState extends State<TaskTimePicker> {
               borderSide: BorderSide.none,
             ),
             focusedBorder: OutlineInputBorder(
-                borderSide: BorderSide(color: TodoColors.blue)),
+              borderSide: BorderSide(color: TodoColors.blue),
+            ),
             floatingLabelBehavior: FloatingLabelBehavior.never,
           ),
           readOnly: true,

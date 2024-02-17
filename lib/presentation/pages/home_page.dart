@@ -21,7 +21,7 @@ class HomePage extends StatelessWidget {
               children: [
                 TaskBox(),
                 Text(
-                  "Completed",
+                  'Completed',
                   style: TextStyle(fontWeight: FontWeight.bold),
                 ),
                 TaskBox(),
@@ -41,7 +41,7 @@ class HomePage extends StatelessWidget {
                         fontSize: 16,
                         fontWeight: FontWeight.bold,
                       )),
-                  child: const Text("New Task"),
+                  child: const Text('New Task'),
                   onPressed: () {
                     Navigator.of(context).push(MaterialPageRoute(
                         builder: (context) => const NewTaskPage()));

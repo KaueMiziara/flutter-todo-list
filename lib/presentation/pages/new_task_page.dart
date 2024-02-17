@@ -26,7 +26,7 @@ class _NewTaskPageState extends State<NewTaskPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: const PageHeader(screenTitle: "New Task"),
+      appBar: const PageHeader(screenTitle: 'New Task'),
       backgroundColor: TodoColors.gray,
       body: SingleChildScrollView(
         child: Column(
@@ -72,7 +72,7 @@ class _NewTaskPageState extends State<NewTaskPage> {
                     fontSize: 16,
                     fontWeight: FontWeight.bold,
                   )),
-              child: const Text("Save"),
+              child: const Text('Save'),
               onPressed: () {
                 TasksViewModel viewModel = Provider.of<TasksViewModel>(
                   context,

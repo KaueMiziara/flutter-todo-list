@@ -24,7 +24,7 @@ class Header extends StatelessWidget {
                 ),
               ),
               const Text(
-                "Todo List",
+                'Todo List',
                 style: TextStyle(
                   color: Colors.white,
                   fontSize: 32,

@@ -15,8 +15,9 @@ class TaskBox extends StatelessWidget {
       child: Container(
         height: 200,
         decoration: const BoxDecoration(
-            color: Color.fromRGBO(250, 250, 250, 1.0),
-            borderRadius: BorderRadius.all(Radius.circular(15))),
+          color: Color.fromRGBO(250, 250, 250, 1.0),
+          borderRadius: BorderRadius.all(Radius.circular(15)),
+        ),
         child: ListView.builder(
           padding: const EdgeInsets.fromLTRB(0, 16, 0, 16),
           itemCount: viewModel.tasks.length,
